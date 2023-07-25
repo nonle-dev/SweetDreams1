@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Sweet Dreams.com</title>
+	<link rel="icon" href="/image/icon.jpg" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/css/home.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- <link rel="header" href="header.css" > -->
+</head>
+
+
+<body>
+	<div class="page">
+
+		<!-- header  -->
+		<div class="header">
+			<div class="logo" style="text-align: center;">
+				<a href="/image/logo.png" title="dreamsweet.com" class="logo">
+					<img src="/image/logo.png" alt="dreamsweet.com" width="310px" height="32px">
+				</a>
+			</div>
+			<div class="topnav">
+				<ul id="main-menu">
+					<li><a href="home">Trang chủ</a></li>
+					<li><a href="">Sản phẩm</a>
+						<ul class="submenu">
+							<li><a href="">Gấu bông</a></li>
+							<li><a href="">Gấu chống lạnh</a></li>
+							<li><a href="">Gối ngủ văn phòng</a></li>
+							<li><a href="">Bịt mắt ngủ</a></li>
+							
+						</ul>
+					</li>
+					<li><a href="/shopping-cart/views">Giỏ hàng</a></li>
+					<li><a href="/register">Đăng nhập</a></li>
+					<li><input type="text" placeholder="Search.."></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="std">
+
+			<!-- Danh sách sản phẩm -->
+			<div id="wrapper">
+				<div class="spbc1">
+					<h2 class="ab">Sản phẩm bán chạy</h2>
+				</div>
+
+				<!--<div class="container">
+		<h2>List Products</h2>
+		<div class="rows">
+			<div class="col-sm-9">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Photo</th>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<th:block th:each="item : ${LIST_PRODUCT}" var="p">
+							<tr th:each="item:${LIST_PRODUCT}" var="p">
+							
+								<td align="center" width="120"><img
+										src="https://dienmaythienhoa.vn/static/images/4.%20hinh%20sp/3.%20Hinh%20SP%202/laptop-asus-s330fn-ey037t-1.png"
+										width="100" height="100" /></td>
+								<td th:text="${item.id}"></td>
+								<td th:text="${item.name}"></td>
+								<td th:text="${item.price}"></td>
+								<td><a class="btn btn-primary btn-sm" th:href="@{'/shopping-cart/add/' + ${item.id}}">Buy now</a></td>
+							
+						</tr>
+						
+					</tbody>
+				</table>
+				
+				
+			</div>
+		</div>
+
+	</div>-->
+				<ul class="products">
+					<tr th:each="item:${LIST_PRODUCT}" var="p">
+						<li>
+							<div class="product-item">
+								<div class="product-top">
+									<a href="" class="product-thumb">
+										<img src="/image/1.1.png" alt="">
+									</a>
+									<a class="buy-now" th:href="@{'/shopping-cart/add/' + ${item.id}}">Buy now</a>
+								</div>
+								<div class="product-info">
+									<!--<a href="" class="product-cat" th:text="${item.id}"></a>-->
+									<a href="" class="product-cat" th:text="${item.name}"></a>
+									<a href="" class="product-name" th:text="${item.nameproduct}"></a>
+
+									<div class="product-price" th:text="${item.price}"></div>
+								</div>
+						</li>
+				</ul>
+				<div class=add style="margin-bottom: 4px;">
+					<a class="btn btn-primary btn-s" href="/product/views">Add Product</a>
+				</div>
+			</div>
+		</div>
+
+
+
+		
+
+
+
+	</div>
+	<footer class="bg-dark text-center text-white">
+			<!-- Grid container -->
+			<div class="container p-4 pb-0">
+				<!-- Section: Social media -->
+				<section class="mb-4">
+					<!-- Facebook -->
+					<a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/non.lee.75/"
+						role="button"><i class="fab fa-facebook-f"></i></a>
+
+					<!-- Github -->
+					<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/nonle-dev"
+						role="button"><i class="fab fa-github"></i></a>
+
+					<!-- Twitter -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+							class="fab fa-twitter"></i></a>
+
+					<!-- Google -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+							class="fab fa-google"></i></a>
+
+					<!-- Instagram -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+							class="fab fa-instagram"></i></a>
+
+					<!-- Linkedin -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+							class="fab fa-linkedin-in"></i></a>
+
+
+				</section>
+				<!-- Section: Social media -->
+			</div>
+			<!-- Grid container -->
+
+			<!-- Copyright -->
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+				2023 Copyright:
+				<a class="text-white" onClick="javascript:window.open('mailto:someone@example.com', 'my-window');event.preventDefault()"
+					href="mailto:nonle.dev@gmail.com">nonle.dev@gmail.com</a>
+				<!--<a class="text-white" href="nonle.dev@gmail.com">nonle.dev@gmail.com</a>-->
+			</div>
+			<!-- Copyright -->
+		</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+		integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
+    <script>
+        $(document).ready(function(){
+            // Tìm tất cả các li có sub-menu và them vào nó class has-child
+            $('.submenu').parent('li').addClass('has-child');
+        });
+    </script>
+</body>
+
+</html>

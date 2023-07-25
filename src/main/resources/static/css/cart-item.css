@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2rem 4rem;
+	line-height: 1.7;
+	font-family: "Nunito Sans", sans-serif;
+	color: #555;
+	min-height: 100vh;
+	background-image: linear-gradient(to bottom right, #67b26f, #4ca2cd);
+}
+ h2 {
+	font-family: "Bungee Inline", sans-serif;
+	font-weight: 400;
+	font-size: 3rem;
+	color: white;
+	margin-bottom: 2rem;
+	text-align: center;
+	word-spacing: 3px;
+}
+
+table thead tr th{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+table tbody tr td{
+    background-color: white;
+    color: black;
+    font-size: 18px;
+}
+#quantity{
+	text-align: center;
+	border-color: aqua ;
+	
+}
+div .total{
+	margin-bottom: 8px;
+	border-radius:4%
+}
+.total{
+	/*padding: 2px 3px;*/
+	margin-right: auto;
+	border:none;
+	background-color: white;
+	font-size: 18px;
+	color: #555;
+	
+}
+
+.a{
+	font-size: 16px;
+	/*padding: 4px 8px;*/
+	border:none;
+	background-color: rgb(128, 128, 255);
+	border-radius:4%
+}
+
+
+

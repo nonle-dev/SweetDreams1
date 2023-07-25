@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	/* bỏ gạch chân */
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #111;
+	line-height: 1.15;
+}
+
+.header {
+	background-color: #070707;
+}
+
+.logo {
+	padding: 8px 0px;
+}
+
+.topnav {
+	/* max-width: 960px; */
+	margin: 0px auto;
+	border-top: 1px solid #434343;
+	background-color: #000000;
+}
+
+#main-menu {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+#main-menu li {
+	position: relative;
+	z-index: 1;
+}
+
+#main-menu li:hover {
+	filter: opacity(80%);
+}
+
+#main-menu li a {
+	color: #ffffff;
+	display: block;
+	padding: 10px 27px;
+	text-align: center;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+#main-menu ul.submenu {
+	position: absolute;
+	background-color: #000000;
+	padding: 10px 0px;
+	list-style: none;
+	border-bottom: 1px solid #434343;
+	width: 199px;
+	display: none; /* ẩn menu*/
+
+}
+
+#main-menu li:hover ul.submenu {
+	display: block;
+}
+
+#main-menu ul.submenu a {
+	padding: 5px 15px;
+	border-bottom: 1px solid #434343;
+	text-align: left;
+	left: 0;
+}
+
+#main-menu ul.submenu li:last-child a {
+	border: none;
+}
+
+.topnav #main-menu li input[type=text] {
+	float: left;
+	padding: 2px;
+	margin-right: 16px;
+	margin-top: 15px;
+	margin-bottom: 18px;
+	border: 1px;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+
+	.topnav #main-menu li a,
+	.topnav #main-menu li input[type=text] {
+		float: none;
+		display: block;
+		text-align: left;
+		width: 100%;
+		margin: 0;
+		padding: 5px;
+	}
+
+	.topnav #main-menu li input[type=text] {
+		border: 1px solid #0a0a0a;
+	}
+}
+
+.spbc {
+	text-align: center;
+	margin: 40px 0px;
+}
+
+h1 {
+	font-size: 18px;
+	color: #111;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	border: 1px solid #bebebe;
+	display: inline-block;
+	/* border vừa dòng chữ  */
+	color: #555;
+	font-weight: 600;
+}
+.spbc1 {
+	text-align: center;
+	margin: 20px 0px;
+}
+.ab {
+	font-size: 18px;
+	color: #111;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	border: 2px solid rgb(0, 0, 0);
+	display: inline-block;
+	/* border vừa dòng chữ  */
+	color: #555;
+	font-weight: 600;
+}
+
+ul.products {
+	list-style: none;/* bỏ dấu chấm trươc list*/
+	display: flex; /*các ảnh lên cùng 1 hàng*/
+	flex-wrap: wrap; /*xuống hàng*/
+	justify-content: space-between; /* giàn khung hiển thị theo hàng ngang*/
+}
+
+ul.products li {
+	flex-basis: 33%;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+
+ul.products li img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul.products li .product-top {
+	position: relative;
+	overflow: hidden;
+	/* ẩn mua ngay xuống dưới */
+}
+
+ul.products li .product-top .product-thumb {
+	display: block;
+}
+
+ul.products li:hover .product-top .product-thumb img {
+	filter: opacity(80%);
+	/* lm ảnh mềm mại hơn khi click chuột vào */
+}
+
+ul.products li .product-top .product-thumb img {
+	display: block; /*  bỏ khoảng cách ben dưới */
+}
+
+ul.products li .product-top a.buy-now {
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	background-color: #446084;
+	color: #fff;
+	padding: 10px 0px;
+	bottom: -44px;/* mua ngay ban đầu -36px */
+	position: absolute;
+	width: 100%;
+	transition: 0.25s ease-in-out;/* làm chậm mua ngay */
+	opacity: 0.85; /*làm mờ mua ngay */
+}
+
+/* click vào ảnh sẽ hiện mua ngay */
+ul.products li:hover a.buy-now {
+	bottom: 0px;
+}
+
+ul.products li .product-info {
+	padding: 8px 0px;
+}
+
+ul.products li .product-info a {
+	display: block;
+	/* mỗi thẻ là 1 hàng*/
+	text-decoration: none;
+	/* không có gạch chân*/
+
+}
+
+ul.products li .product-info a.product-cat {
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #a6a6a7;
+	padding: 3px 0px;
+	font-weight: 600;
+}
+
+ul.products li .product-info a.product-name {
+	color: #000000;
+	font-size: 13px;
+	padding: 3px 0px;
+}
+
+ul.products li .product-info .product-price {
+	color: #111;
+	padding: 2px 0px;
+	font-weight: 600;
+	/*in đậm*/
+}
+
+#main-menu>li.has-child::after {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f107";
+	color: #ffffff;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 17px 0px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Sweet Dreams.com</title>
+	 <link rel="icon" href="/image/icon.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Nunito+Sans:wght@400;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Cart</h2>
+		<div class="rows">
+			<!--<div class="col-sm-9">-->
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Amount</th>
+
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="item:${CART_ITEMS}" var="item">
+						<form action="/shopping-cart/update" method="post">
+							<input type="hidden" name="id" th:value="${item.productId}" />
+							<td th:text="${item.productId }"></td>
+							<td th:text="${item.name }"></td>
+							<!--<td th:text="${item.nameproduct }"></td>-->
+							<td th:text="${item.price}"></td>
+							<td><input id="quantity" name="qty" th:value="${item.qty}" onblur="this.form.submit()"
+									style="width: 50px;"></td>
+							<td th:text="${item.price*item.qty}"></td>
+							<td><button class="btn btn-primary btn-s"
+									th:href="@{'/shopping-cart/del/' + ${item.productId}}">Remove</button></td>
+						</form>
+					</tr>
+
+				</tbody>
+			</table>
+			<div  class="total"><a>Total :<span th:text="${TOTAL}"></span></a></div>
+
+			<a class="btn btn-primary btn-s" href="/shopping-cart/clear">Clear Cart</a>
+			<a class="btn btn-primary btn-s" href="/product/views">Add more</a>
+			  
+		</div>
+
+	</div>
+</body>
+
+</html>

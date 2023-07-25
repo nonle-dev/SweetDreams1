@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title> Sweet Dreams.com</title>
+	 <link rel="icon" href="/image/icon.jpg" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/css/register.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper" >
+		<div class="wrapper-heading">
+            <h1>Sign Up</h1>
+         </div>
+	<form  th:action="${ACTION}" th:object=${USER} method="post">
+		<div class="form-group">
+			<label>UserName</label>
+			<input type="text" th:field="*{username}" class="form-control" name="username" placeholder="Enter UserName" id="username" value="">
+		</div>
+		<div class="form-group">
+			<label>Password:</label>
+			<input type="password" th:field="*{password}"  class="form-control" name="password" placeholder="Enter password">
+		</div>
+		<div class="form-group">
+			<label>FullName</label>
+			<input type="text" th:field="*{fullname}" class="form-control" name="fullName" placeholder="Enter UserName" id="fullName" value="">
+		</div>
+		<div class="form-group">
+			<label>Age</label>
+			<input type="number"  class="form-control" name="age" placeholder="Enter age" id="age" value="0">
+		</div>
+		<div class="form-group">
+			<label>Gender</label>
+			<div class="radio">
+				<!--value = 1 => Nam| 0 =>Nu -->
+				<label class="checkbox-inline">
+					<input type="radio"  name="gender" value="0" id="gender1">Male</label>
+				<label class="checkbox-inline">
+					<input type="radio"  name="gender" checked="checked" value="1" id="gender2">Female</label>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Save</button>
+		<button type="reset" class="btn btn-primary">Cancel</button>
+		<a class="btn btn-primary" href="/list">Display List User</a>
+	</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  margin: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(120deg,#3ca7ee,#9b408f);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    text-align: center;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+/* .table table-bordered thead{
+    background: rgb(0, 0, 0);
+} */
+tr:hover{
+    background-color:#ddd;
+    cursor:pointer;
+}
+table thead tr th{
+    background-color: black;
+    color: white;
+}
+table tbody tr td{
+    background-color: white;
+    color: black;
+}
